@@ -104,7 +104,7 @@ function makeParticles(){
       p.textContent=items[Math.floor(Math.random()*items.length)];
     } else {
       const s=2+Math.random()*4;
-      p.style.cssText='position:absolute;width:'+s+'px;height:'+s+'px;border-radius:50%;'+
+      p.style.cssText='position:fixed;width:'+s+'px;height:'+s+'px;border-radius:50%;'+
         'background:#E8C4C4;left:'+Math.random()*100+'%;'+
         'animation:riseUp '+(7+Math.random()*13)+'s linear '+(Math.random()*14)+'s infinite;opacity:0;';
     }
@@ -134,12 +134,12 @@ function makeParticles(){
     const p=document.createElement('div');
     const isEmoji=Math.random()>.45;
     if(isEmoji){
-      p.style.cssText=`position:absolute;font-size:${12+Math.random()*20}px;left:${Math.random()*100}%;
+      p.style.cssText=`position:fixed;font-size:${12+Math.random()*20}px;left:${Math.random()*100}%;
         animation:riseUp ${7+Math.random()*10}s linear ${Math.random()*8}s infinite;opacity:0;`;
       p.textContent=items[Math.floor(Math.random()*items.length)];
     } else {
       const s=4+Math.random()*8;
-      p.style.cssText=`position:absolute;width:${s}px;height:${s}px;border-radius:2px;
+      p.style.cssText=`position:fixed;width:${s}px;height:${s}px;border-radius:2px;
         background:${colors[Math.floor(Math.random()*colors.length)]};
         left:${Math.random()*100}%;
         animation:riseUp ${6+Math.random()*9}s linear ${Math.random()*8}s infinite;opacity:0;`;
@@ -166,12 +166,12 @@ function makeParticles(){
     const p=document.createElement('div');
     const isEmoji=Math.random()>.4;
     if(isEmoji){
-      p.style.cssText=`position:absolute;font-size:${10+Math.random()*16}px;left:${Math.random()*100}%;
+      p.style.cssText=`position:fixed;font-size:${10+Math.random()*16}px;left:${Math.random()*100}%;
         animation:riseUp ${8+Math.random()*12}s linear ${Math.random()*10}s infinite;opacity:0;`;
       p.textContent=items[Math.floor(Math.random()*items.length)];
     } else {
       const s=2+Math.random()*5;
-      p.style.cssText=`position:absolute;width:${s}px;height:${s}px;border-radius:50%;
+      p.style.cssText=`position:fixed;width:${s}px;height:${s}px;border-radius:50%;
         background:${['#C084FC','#F472B6','#818CF8','#fff'][Math.floor(Math.random()*4)]};
         left:${Math.random()*100}%;
         animation:riseUp ${8+Math.random()*12}s linear ${Math.random()*10}s infinite;opacity:0;`;
@@ -199,7 +199,7 @@ function makeParticles(){
   for(let i=0;i<45;i++){
     const p=document.createElement('div');
     const s=2+Math.random()*5;
-    p.style.cssText=`position:absolute;width:${s}px;height:${s}px;border-radius:50%;
+    p.style.cssText=`position:fixed;width:${s}px;height:${s}px;border-radius:50%;
       background:${colors[Math.floor(Math.random()*colors.length)]};
       left:${Math.random()*100}%;
       animation:riseUp ${10+Math.random()*14}s linear ${Math.random()*12}s infinite;opacity:0;`;
@@ -231,7 +231,7 @@ function makeParticles(){
   for(let i=0;i<55;i++){
     const p=document.createElement('div');
     const s=2+Math.random()*6;
-    p.style.cssText='position:absolute;width:'+s+'px;height:'+s+'px;border-radius:50%;'+
+    p.style.cssText='position:fixed;width:'+s+'px;height:'+s+'px;border-radius:50%;'+
       'background:'+colors[Math.floor(Math.random()*colors.length)]+';'+
       'left:'+Math.random()*100+'%;'+
       'animation:riseUp '+(7+Math.random()*13)+'s linear '+(Math.random()*14)+'s infinite;opacity:0;';
@@ -872,8 +872,8 @@ def display():
 html,body{{width:100%;height:100%;overflow:hidden;color:#fff}}
 .stage{{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}}
 .canvas{{position:relative;width:100vw;height:calc(100vw * 10 / 16);max-height:100vh;max-width:calc(100vh * 16 / 10)}}
-.pts{{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}}
-@keyframes riseUp{{0%{{transform:translateY(110%) rotate(0deg);opacity:0}}5%{{opacity:.6}}85%{{opacity:.3}}100%{{transform:translateY(-15%) rotate(360deg);opacity:0}}}}
+.pts{{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}}
+@keyframes riseUp{{0%{{transform:translateY(100vh) rotate(0deg);opacity:0}}8%{{opacity:.7}}88%{{opacity:.35}}100%{{transform:translateY(-100px) rotate(360deg);opacity:0}}}}
 .empty{{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:3}}
 .empty.hide{{display:none}}
 .empty-title{{font-family:{font_family};font-size:clamp(2.5rem,8vw,7rem);background:linear-gradient(135deg,{grad});-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;text-align:center;animation:breathe 3.5s ease-in-out infinite}}
